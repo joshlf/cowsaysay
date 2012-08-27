@@ -1,0 +1,4 @@
+cowsaysay
+=========
+
+Recursively embedded cowsay
