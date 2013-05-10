@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Copyright 2013 The Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
 if [ $# -ne 2 -a $# -ne 4 ]
 then
 	echo "Usage: $0 [-T tongue] <n> <text>"
