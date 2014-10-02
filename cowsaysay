@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Copyright 2013 The Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+set -e
+
+if [ $# -lt 1 ]; then
+	echo "Usage: <n> [<args>...]"
+	exit 1
+fi
+
+NUM=$(( $1 - 1 ))
+shift 1
+ARGS=$@
+
+TMP1=/tmp/cowsaysay$$_1.tmp
+TMP2=/tmp/cowsaysay$$_2.tmp
+
+cowsay $ARGS > $TMP1
+
+for i in `seq 1 $NUM`; do
+	cowsay -n $ARGS <$TMP1 >$TMP2
+	mv $TMP2 $TMP1
+done
+
+cat $TMP1
+rm $TMP1
