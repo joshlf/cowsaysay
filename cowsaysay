@@ -7,7 +7,8 @@
 set -e
 
 if [ $# -lt 1 ]; then
-	echo "Usage: <n> [<args>...]"
+	CMD=$(echo $0 | rev | cut -d '/' -f 1 | rev)
+	echo "Usage: $CMD <n> [<args>...]"
 	exit 1
 fi
 
